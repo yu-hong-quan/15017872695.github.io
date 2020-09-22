@@ -7,14 +7,14 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>五、js判断iPhone X，适配底部被小黑条遮挡问题 - 热心市民余生</title>
+  <title>九、登录时的cookie设置到第二次的请求头里面 - 热心市民余生</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
 
   
   
-  <meta name="description" content="如果是iPhoneX等手机，底部有小黑条会遮挡底部的按..."> 
+  <meta name="description" content="前端跨域设置 withCredentials: tru..."> 
   
   <meta name="author" content="John Doe"> 
 
@@ -106,7 +106,7 @@
 
 <nav class="navbar">
   <div class="left"></div>
-  <div class="center">五、js判断iPhone X，适配底部被小黑条遮挡问题</div>
+  <div class="center">九、登录时的cookie设置到第二次的请求头里面</div>
   <div class="right">
     <i class="iconfont iconmenu j-navbar-menu"></i>
   </div>
@@ -160,27 +160,27 @@
     <section class="head">
   <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
   <div class="head-mask">
-    <h1 class="head-title">五、js判断iPhone X，适配底部被小黑条遮挡问题</h1>
+    <h1 class="head-title">九、登录时的cookie设置到第二次的请求头里面</h1>
     <div class="head-info">
-      <span class="post-info-item"><i class="iconfont iconcalendar"></i>August 03, 2020</span
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>August 05, 2020</span
         class="post-info-item">
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1746</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>193</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
-        <h4 id="如果是iPhoneX等手机，底部有小黑条会遮挡底部的按钮"><a href="#如果是iPhoneX等手机，底部有小黑条会遮挡底部的按钮" class="headerlink" title="如果是iPhoneX等手机，底部有小黑条会遮挡底部的按钮"></a>如果是iPhoneX等手机，底部有小黑条会遮挡底部的按钮</h4><h6 id="方法一：js判断，-给底部加padding适配。"><a href="#方法一：js判断，-给底部加padding适配。" class="headerlink" title="方法一：js判断， 给底部加padding适配。"></a>方法一：js判断， 给底部加padding适配。</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">$(document).ready(<span class="hljs-function"><span class="hljs-title">function</span></span> () &#123;<br>    isIPhoneX();<br>    <span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">isIPhoneX</span></span>() &#123;<br>        var u = navigator.userAgent;<br>        var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端<br>        <span class="hljs-keyword">if</span> (isIOS) &#123;<br>            <span class="hljs-keyword">if</span> (screen.height == 812 &amp;&amp; screen.width == 375) &#123;<br>                $(<span class="hljs-string">&#x27;.menu_wkBox.back_box&#x27;</span>).css(<span class="hljs-string">&#x27;padding-bottom&#x27;</span>, <span class="hljs-string">&#x27;0.5rem&#x27;</span>)<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (screen.height == 896 &amp;&amp; screen.width == 414) &#123;<br>                $(<span class="hljs-string">&#x27;.menu_wkBox.back_box&#x27;</span>).css(<span class="hljs-string">&#x27;padding-bottom&#x27;</span>, <span class="hljs-string">&#x27;1rem&#x27;</span>)<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;);<br> <br>// iPhone X、iPhone XS<br>var isIPhoneX = /iphone/gi.test(window.navigator.userAgent) &amp;&amp; window.devicePixelRatio &amp;&amp; window.devicePixelRatio === 3 &amp;&amp; window.screen.width === 375 &amp;&amp; window.screen.height === 812;<br>// iPhone XS Max<br>var isIPhoneXSMax = /iphone/gi.test(window.navigator.userAgent) &amp;&amp; window.devicePixelRatio &amp;&amp; window.devicePixelRatio === 3 &amp;&amp; window.screen.width === 414 &amp;&amp; window.screen.height === 896;<br>// iPhone XR<br>var isIPhoneXR = /iphone/gi.test(window.navigator.userAgent) &amp;&amp; window.devicePixelRatio &amp;&amp; window.devicePixelRatio === 2 &amp;&amp; window.screen.width === 414 &amp;&amp; window.screen.height === 896;<br></code></pre></td></tr></table></figure>
-<h6 id="方法二：用css解决"><a href="#方法二：用css解决" class="headerlink" title="方法二：用css解决"></a>方法二：用css解决</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">meta：<br>&lt;meta name=<span class="hljs-string">&quot;viewport&quot;</span> content=<span class="hljs-string">&quot;width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover&quot;</span>&gt;<br><br>css：<br> <br>@supports (bottom: env(safe-area-inset-bottom)) &#123;<br>    .menu_wkBox.back_box&#123;<br>        padding-bottom: env(safe-area-inset-bottom);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
+        <h3 id="前端跨域设置-withCredentials-true"><a href="#前端跨域设置-withCredentials-true" class="headerlink" title="前端跨域设置 withCredentials: true"></a>前端跨域设置 withCredentials: true</h3><p>在做登录认证的时候，会出现请求未登录的情况，查看请求头的时候发现并没有把登录时的cookie设置到第二次的请求头里面。</p>
+<p>查看资料才知道跨域请求要想带上cookie，必须要在ajax请求里加上↓↓↓↓</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">xhrFields: &#123;withCredentials: <span class="hljs-literal">true</span>&#125;, crossDomain: <span class="hljs-literal">true</span>。<br></code></pre></td></tr></table></figure>
       </section>
       <section class="extra">
         
         <ul class="copyright">
   
   <li><strong>本文作者：</strong>John Doe</li>
-  <li><strong>本文链接：</strong><a href="http://yoursite.com/2020/08/03/%E4%BA%94%E3%80%81js%E5%88%A4%E6%96%ADiPhone-X%EF%BC%8C%E9%80%82%E9%85%8D%E5%BA%95%E9%83%A8%E8%A2%AB%E5%B0%8F%E9%BB%91%E6%9D%A1%E9%81%AE%E6%8C%A1%E9%97%AE%E9%A2%98/index.html">http://yoursite.com/2020/08/03/%E4%BA%94%E3%80%81js%E5%88%A4%E6%96%ADiPhone-X%EF%BC%8C%E9%80%82%E9%85%8D%E5%BA%95%E9%83%A8%E8%A2%AB%E5%B0%8F%E9%BB%91%E6%9D%A1%E9%81%AE%E6%8C%A1%E9%97%AE%E9%A2%98/index.html</a></li>
+  <li><strong>本文链接：</strong><a href="http://yoursite.com/2020/08/05/%E7%99%BB%E5%BD%95%E6%97%B6%E7%9A%84cookie%E8%AE%BE%E7%BD%AE%E5%88%B0%E7%AC%AC%E4%BA%8C%E6%AC%A1%E7%9A%84%E8%AF%B7%E6%B1%82%E5%A4%B4%E9%87%8C%E9%9D%A2/index.html">http://yoursite.com/2020/08/05/%E7%99%BB%E5%BD%95%E6%97%B6%E7%9A%84cookie%E8%AE%BE%E7%BD%AE%E5%88%B0%E7%AC%AC%E4%BA%8C%E6%AC%A1%E7%9A%84%E8%AF%B7%E6%B1%82%E5%A4%B4%E9%87%8C%E9%9D%A2/index.html</a></li>
   <li><strong>版权声明：</strong>本博客所有文章均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
       rel="external nofollow" target="_blank"> BY-NC-SA </a>许可协议，转载请注明出处！</li>
   
@@ -201,10 +201,8 @@
         
 <nav class="nav">
   
-    <a href="/2020/08/03/%E5%85%AD%E3%80%81H5%E8%BD%AF%E9%94%AE%E7%9B%98%E5%BC%B9%E8%B5%B7%E9%A1%B5%E9%9D%A2%E8%A2%AB%E5%8E%8B%E7%BC%A9%E9%97%AE%E9%A2%98/"><i class="iconfont iconleft"></i>六、移动端软键盘弹起页面被压缩问题</a>
   
-  
-    <a href="/2020/08/03/%E5%9B%9B%E3%80%81%E3%80%90%E5%85%BC%E5%AE%B9%E6%80%A7%E3%80%91ios%E4%B8%8A%E8%AE%BE%E7%BD%AEoverflow-scroll%E4%B8%8D%E6%BB%9A%E5%8A%A8bug/">四、【兼容性】ios上设置overflow-scroll不滚动bug<i class="iconfont iconright"></i></a>
+    <a href="/2020/08/05/%E3%80%81canvas%E7%94%BB%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E4%B8%8D%E6%B8%85%E6%99%B0%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F/">八、canvas画图片显示不清晰怎么办？<i class="iconfont iconright"></i></a>
   
 </nav>
 
