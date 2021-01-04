@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TypeScript基础（一看就懂） - 热心市民余生</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+
+  
+  
+  <meta name="description" content="1、变量声明1let dName:string = &amp;..."> 
+  
+  <meta name="author" content="Yu Sheng"> 
+
+  
+    <link rel="icon" href="/images/icons/HTMLicon.png" type="image/png" sizes="16x16">
+  
+  
+    <link rel="icon" href="/images/icons/HTMLicon.png" type="image/png" sizes="32x32">
+  
+  
+    <link rel="apple-touch-icon" href="/images/icons/HTMLicon.png" sizes="180x180">
+  
+  
+    <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/HTMLicon.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_hhodbqn7tit.css">
+
+  
+
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css">
+
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        loadingImage: '/images/theme/loading.gif',
+      },
+      donate: {
+        enable: true,
+        alipay: '/images/theme/welcome-image.jpg',
+        wechat: '/images/theme/wecath.jpg'
+      },
+      motto: {
+        api: '',
+        default: '本是青灯不归客 ， 却因浊酒恋红尘'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        alwaysShow: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: true
+      }
+    }
+  </script>
+
+  
+
+  
+<meta name="generator" content="Hexo 5.0.0"></head>
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+
+
+<nav class="navbar">
+  <div class="left"></div>
+  <div class="center">TypeScript基础（一看就懂）</div>
+  <div class="right">
+    <i class="iconfont iconmenu j-navbar-menu"></i>
+  </div>
+</nav>
+
+  <nav class="menu">
+  <div class="menu-wrap">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content">
+      
+      
+      
+      
+      <li class="menu-item"><a href="/ " class="underline"> 首页</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/galleries " class="underline"> 摄影</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/archives " class="underline"> 归档</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/tags " class="underline"> 标签</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/categories " class="underline"> 分类</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/about " class="underline"> 关于</a></li>
+      
+    </ul>
+    <div class="menu-copyright">
+      <div style="width: 100%;display: flex;justify-content: center;margin-bottom:100px;">
+        <!--网易云插件-->
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=467952048&auto=1&height=66"></iframe>
+      </div>
+      <p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p>
+    </div>
+  </div>
+</nav> 
+  <main id="main">
+  <div class="container" id="container">
+    <article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">TypeScript基础（一看就懂）</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>September 25, 2020</span
+        class="post-info-item">
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>4874</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h6 id="1、变量声明"><a href="#1、变量声明" class="headerlink" title="1、变量声明"></a>1、变量声明</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> dName:string = <span class="hljs-string">&#x27;Ruiky&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+<h6 id="2、数据类型"><a href="#2、数据类型" class="headerlink" title="2、数据类型"></a>2、数据类型</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><code class="hljs js">  <span class="hljs-comment">// 1.字符串类型</span><br>  <span class="hljs-keyword">let</span> aName:string = <span class="hljs-string">&#x27;貂蝉&#x27;</span>;<br><br>---------------------------------------------------------------------<br><br>  <span class="hljs-comment">// 2.数值类型</span><br>  <span class="hljs-keyword">let</span> dAge:number = <span class="hljs-number">21</span>;<br>  dAge = <span class="hljs-number">18.13</span>;<br>  dAge = <span class="hljs-number">-17</span>;<br><br>---------------------------------------------------------------------<br><br>  <span class="hljs-comment">// 3.布尔值类型</span><br>  <span class="hljs-keyword">let</span> isSingleDog:boolean = <span class="hljs-literal">true</span>;<br>  isSingleDog = <span class="hljs-literal">false</span><br><br>---------------------------------------------------------------------<br><br>  <span class="hljs-comment">// 4.undefined和null</span><br>  <span class="hljs-keyword">let</span> undef:<span class="hljs-literal">undefined</span> = <span class="hljs-literal">undefined</span>;<br>  <span class="hljs-keyword">let</span> unNull:<span class="hljs-literal">null</span> = <span class="hljs-literal">null</span>;<br><br>---------------------------------------------------------------------<br><br>  <span class="hljs-comment">// 5.数组--需要声明时指定数组中元素的类型</span><br>  <span class="hljs-comment">// 语法:</span><br>      <span class="hljs-comment">// 方法一:let 数组名:类型[] = [值1,值2]</span><br>      <span class="hljs-keyword">let</span> arrHeros: <span class="hljs-built_in">String</span>[] = [<span class="hljs-string">&#x27;安琪拉&#x27;</span>,<span class="hljs-string">&#x27;元歌&#x27;</span>]<br>      <span class="hljs-comment">// 方法二:let 数组名:Array&lt;类型&gt; = [值1,值2]        泛型数组写法</span><br>      <span class="hljs-keyword">let</span> arrHerosTwo: <span class="hljs-built_in">Array</span>&lt;<span class="hljs-built_in">Number</span>&gt; = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br><br>---------------------------------------------------------------------<br><br>  <span class="hljs-comment">// 6.元组--一个规定了元素的数量和每个元素类型的&quot;数组&quot;,而每个元素的类型可以不同</span><br>  <span class="hljs-comment">// 语法:</span><br>      <span class="hljs-comment">// let 元组名:[类型1,类型2,类型3] = [值1,值2,值3]</span><br>      <span class="hljs-keyword">let</span> tup1:[string,number,boolean] = [<span class="hljs-string">&#x27;111&#x27;</span>,<span class="hljs-number">1</span>,<span class="hljs-literal">true</span>];<br>      tup1 = [<span class="hljs-string">&#x27;222&#x27;</span>,<span class="hljs-number">2</span>,<span class="hljs-literal">false</span>]<br>  <span class="hljs-comment">// 访问元组中的元素：</span><br>      tup1[<span class="hljs-number">0</span>];<br>      tup1.length;<br><br>---------------------------------------------------------------------<br><br>  <span class="hljs-comment">// 7.枚举</span><br>  <span class="hljs-comment">// 语法：</span><br>      <span class="hljs-comment">/**</span><br><span class="hljs-comment">       * enum 枚举名&#123;</span><br><span class="hljs-comment">       *  枚举项1 = 枚举值1，</span><br><span class="hljs-comment">       *  枚举项2 = 枚举值2，</span><br><span class="hljs-comment">       * &#125;</span><br><span class="hljs-comment">       */</span><br>      enum GunType&#123;<br>          AK47 = <span class="hljs-string">&#x27;水晶AK47&#x27;</span>,<br>          M416 = <span class="hljs-string">&#x27;青铜M416&#x27;</span><br>      &#125;<br>      <span class="hljs-built_in">console</span>.log(GunType)<br>      <span class="hljs-comment">// 枚举默认值 将自动生成且从0开始</span><br>      enum GunTypeTwo&#123;<br>          Goza,<br>          Gozb,<br>          Gozc<br>      &#125;<br>      <span class="hljs-comment">/**</span><br><span class="hljs-comment">       * enum GunTypeTwo&#123;</span><br><span class="hljs-comment">       *  Goza = 0,</span><br><span class="hljs-comment">       *  Gozb = 1,</span><br><span class="hljs-comment">       *  Gozc = 2,</span><br><span class="hljs-comment">       * &#125;</span><br><span class="hljs-comment">       */</span><br>      <span class="hljs-comment">// 实例Demo </span><br>      enum Gender&#123;<br>          Boy = <span class="hljs-number">1</span>,<br>          Girl = <span class="hljs-number">2</span>,<br>          Unknow = <span class="hljs-number">3</span><br>      &#125;<br>      <span class="hljs-comment">// 创建用户性别变量</span><br>      <span class="hljs-keyword">let</span> usrSex:Gender = Gender.Boy;<br>      <span class="hljs-comment">// 判断变量中性别是否为Boy</span><br>      <span class="hljs-keyword">if</span>(usrSex == Gender.Boy)&#123;<br>          <span class="hljs-built_in">console</span>.log(usrSex)<br>      &#125;<span class="hljs-keyword">else</span>&#123;<br>          <span class="hljs-built_in">console</span>.log(usrSex)<br>      &#125;<br><br>---------------------------------------------------------------------<br><br>  <span class="hljs-comment">// 8.任意类型any--any代表任意类型，一般在获取dom时使用</span><br>      <span class="hljs-comment">// 示例:</span><br>      <span class="hljs-keyword">let</span> textName:any = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;textN&#x27;</span>);<br><br>---------------------------------------------------------------------<br><br>  <span class="hljs-comment">// 9.一般用在无返回值的函数</span><br>      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHi1</span>(<span class="hljs-params"></span>):<span class="hljs-title">string</span></span>&#123;<br>          <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;hi,您好呀&#x27;</span><br>      &#125;<br>      <span class="hljs-keyword">let</span> re1 = sayHi1();<br><br>      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHi2</span>(<span class="hljs-params"></span>):<span class="hljs-title">void</span></span>&#123;<br>          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;hi 啥,讨厌,死鬼~~~&#x27;</span>)<br>      &#125;<br><br>---------------------------------------------------------------------<br><br>  <span class="hljs-comment">// 10.never--代表不存在的值的类型,常用作为抛出异常或无限循环的函数返回类型</span><br>      <span class="hljs-comment">// 语法:</span><br>      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>):<span class="hljs-title">never</span></span>&#123;<br>          <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)&#123;<br><br>          &#125;<br>      &#125;<br>      <span class="hljs-comment">// never类型是ts中的底部类型,所有类型都是never类型的父类,所以never类型值可以赋值给任意类型的变量</span><br>    <br><br></code></pre></td></tr></table></figure>
+<h6 id="3、函数"><a href="#3、函数" class="headerlink" title="3、函数"></a>3、函数</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 1.函数 返回值 类型-----------------</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHi</span>(<span class="hljs-params"></span>):<span class="hljs-title">string</span></span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;hi~ old driver~~&#x27;</span>;<br>&#125;<br><br><span class="hljs-keyword">let</span> res1:string = sayHi();<br><span class="hljs-built_in">console</span>.log(res1);<br><br>---------------------------------------------------------------------<br><br><span class="hljs-comment">// 2.函数 形参 类型 ------------------</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jumpSan</span>(<span class="hljs-params">cityName:string</span>):<span class="hljs-title">void</span></span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`兄嘚,跳哪里?去[<span class="hljs-subst">$&#123;cityName&#125;</span>]`</span>)<br>&#125;<br>jumpSan(<span class="hljs-string">&#x27;P城&#x27;</span>)<br><br>---------------------------------------------------------------------<br><br><span class="hljs-comment">// 3.函数形参 可选参数 参数后面加?号代表该参数可传可不传</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jumpSanTwo</span>(<span class="hljs-params">cityName?:string,cityNameTwo?:string</span>):<span class="hljs-title">void</span></span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;兄嘚,跳哪里?&#x27;</span>)<br>&#125;<br>jumpSanTwo(<span class="hljs-string">&#x27;1&#x27;</span>)<br><br>---------------------------------------------------------------------<br><br><span class="hljs-comment">// 4.函数形参 默认值</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jumpSanFore</span>(<span class="hljs-params">cityName:string=<span class="hljs-string">&#x27;G港&#x27;</span></span>):<span class="hljs-title">void</span></span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;兄嘚,跳哪里?&#x27;</span>)<br>&#125;<br>jumpSanFore(<span class="hljs-string">&#x27;P城&#x27;</span>)<br><br>---------------------------------------------------------------------<br><br><span class="hljs-comment">// 5.函数剩余参数--数量不确定的参数 c,b,e.....</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">a:string,b:boolean,c:number,...ArrObj:[]</span>):<span class="hljs-title">void</span></span>&#123;<br>    <span class="hljs-comment">// 特点:1.剩余参数只能定义一个  2.剩余参数只能定义为数组  3.剩余参数只能定义在形参列表最后</span><br>&#125;<br><span class="hljs-comment">// 实例Demo</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addTwo</span>(<span class="hljs-params">x:number,y:number,...restOfNum:number[]</span>):<span class="hljs-title">void</span></span>&#123;<br>    <span class="hljs-comment">// 创建一个求和变量,保存x + y的值求和后存入</span><br>    <span class="hljs-keyword">let</span> resNum:number = x + y;<br>    <span class="hljs-comment">// 使用for of 语法遍历 剩余参数 数组中每个元素,并累加到求和变量中</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> ele <span class="hljs-keyword">of</span> restOfNum)&#123;<br>        resNum+=ele;<br>    &#125;<br>    <span class="hljs-built_in">console</span>.log(resNum)<br>&#125;<br>addTwo(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)<br>addTwo(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>);<br></code></pre></td></tr></table></figure>
+
+<h6 id="4、类"><a href="#4、类" class="headerlink" title="4、类"></a>4、类</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">City</span></span>&#123;<br>    <span class="hljs-comment">// 成员变量</span><br>    cName:string;<br>    clevel:number;<br><br>    <span class="hljs-comment">// 构造函数</span><br>    <span class="hljs-keyword">constructor</span>(name:string,level:number)&#123;<br>        <span class="hljs-built_in">this</span>.cName = name;<br>        <span class="hljs-built_in">this</span>.clevel = level;<br>    &#125;<br><br>    <span class="hljs-comment">// 成员方法</span><br>    aboutFnc()&#123;<br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`欢迎来到<span class="hljs-subst">$&#123;<span class="hljs-built_in">this</span>.cName&#125;</span>,此地危险系数为:<span class="hljs-subst">$&#123;<span class="hljs-built_in">this</span>.clevel&#125;</span>`</span>)<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// 创建对象</span><br><span class="hljs-keyword">let</span> c1 = <span class="hljs-keyword">new</span> City(<span class="hljs-string">&#x27;P城&#x27;</span>,<span class="hljs-number">5</span>);<br>c1.aboutFnc();<br><br></code></pre></td></tr></table></figure>
+      </section>
+      <section class="extra">
+        
+        <ul class="copyright">
+  
+  <li><strong>本文作者：</strong>Yu Sheng</li>
+  <li><strong>本文链接：</strong><a href="http://yoursite.com/2020/09/25/ypeScript%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%E7%9C%8B%E5%B0%B1%E6%87%82%EF%BC%89/index.html">http://yoursite.com/2020/09/25/ypeScript%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%E7%9C%8B%E5%B0%B1%E6%87%82%EF%BC%89/index.html</a></li>
+  <li><strong>版权声明：</strong>本博客所有文章均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
+      rel="external nofollow" target="_blank"> BY-NC-SA </a>许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+        <section class="donate">
+  <div class="qrcode">
+    <img   class="lazyload" data-original="/images/theme/welcome-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+        
+<nav class="nav">
+  
+  
+    <a href="/2020/08/05/%E7%99%BB%E5%BD%95%E6%97%B6%E7%9A%84cookie%E8%AE%BE%E7%BD%AE%E5%88%B0%E7%AC%AC%E4%BA%8C%E6%AC%A1%E7%9A%84%E8%AF%B7%E6%B1%82%E5%A4%B4%E9%87%8C%E9%9D%A2/">登录时的cookie设置到第二次的请求头里面<i class="iconfont iconright"></i></a>
+  
+</nav>
+
+      </section>
+      
+      <section class="comments">
+  
+  <div class="btn" id="comments-btn">查看评论</div>
+  
+  
+<div id="valine"></div>
+<script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  window.onload = function () {
+    var loadValine = function () {
+      new Valine({
+        el: '#valine',
+        app_id: "zaf7eXSTdzfxQz7nHkrQwz8B-gzGzoHsz",
+        app_key: "rGDMRQBv6k4UgQughlk6KTjj",
+        placeholder: "雁过留痕",
+        avatar: "mm",
+        pageSize: "10",
+        lang: "zh-CN",
+      });
+    }
+    if ( true ) {
+      $("#comments-btn").on("click", function () {
+        $(this).hide();
+        loadValine();
+      });
+    } else {
+      loadValine();
+    }
+  };
+</script>
+
+</section>
+      
+    </section>
+  </div>
+</article>
+  </div>
+</main>
+  <footer class="footer">
+  <div class="footer-social">
+    
+    
+    
+    
+    
+    <a href="tencent://message/?Menu=yes&uin=360151193 " target="_blank" onMouseOver="this.style.color= '#12B7F5'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconQQ "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="javascript:; " target="_blank" onMouseOver="this.style.color= '#09BB07'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconwechat-fill "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="https://www.instagram.com/izhaoo/ " target="_blank" onMouseOver="this.style.color= '#DA2E76'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconinstagram "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="https://github.com/15017872695 " target="_blank" onMouseOver="this.style.color= '#24292E'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  icongithub-fill "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="mailto:15017872695@163.com " target="_blank" onMouseOver="this.style.color='#FFBE5B'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconmail"></i>
+    </a>
+    
+  </div>
+  <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  <div class="fab fab-daovoice">
+    <i class="iconfont iconcomment"></i>
+  </div>
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/modules.js"></script>
+<script src="/js/zui.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i["DaoVoiceObject"] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    a.charset = "utf-8";
+    m.parentNode.insertBefore(a, m)
+  })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+    "//widget.daovoice.io/widget/0f81ff2f.js", "daovoice")
+  daovoice('init', {
+    app_id: "abcdefg"
+  }, {
+    launcher: {
+      disableLauncherIcon: true,
+    },
+  });
+  daovoice('update');
+</script>
+
+
+
+<script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+<script>
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?4c204d8bc027a0455b5fc642ac334ca8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+</html>
