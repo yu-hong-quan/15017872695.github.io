@@ -178,10 +178,10 @@
     <section class="main">
       <section class="content">
         <p>1、首先想到的是通过 JS 实现，对 touch 事件做处理。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">window.ontouchstart = <span class="hljs-keyword">function</span>(e) &#123; e.preventDefault(); &#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">window</span>.ontouchstart = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>&#123; e.preventDefault(); &#125;;<br></code></pre></td></tr></table></figure>
 
 <p>2、通过 CSS3 属性实现。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">img &#123;<br>    pointer-events: none;<br>&#125;<br>如果只是禁止图片选中，长按图片不会有问题，但是如果是先选择旁边的文字，同时选中了图片，那图片照样会被复制出来。<br>再给元素的 CSS 中添加如下两行代码：<br>    -webkit-user-select: none;/*禁用手机浏览器的用户选择功能 */<br>    -moz-user-select: none;<br></code></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">img</span> &#123;<br>    <span class="hljs-attribute">pointer-events</span>: none;<br>&#125;<br>如果只是禁止图片选中，长按图片不会有问题，但是如果是先选择旁边的文字，同时选中了图片，那图片照样会被复制出来。<br>再给元素的 <span class="hljs-selector-tag">CSS</span> 中添加如下两行代码：<br>    <span class="hljs-selector-tag">-webkit-user-select</span>: <span class="hljs-selector-tag">none</span>;<span class="hljs-comment">/*禁用手机浏览器的用户选择功能 */</span><br>    <span class="hljs-selector-tag">-moz-user-select</span>: <span class="hljs-selector-tag">none</span>;<br></code></pre></td></tr></table></figure>
 <p>转载：<a target="_blank" rel="noopener" href="https://www.w3h5.com/post/98.html">https://www.w3h5.com/post/98.html</a> </p>
 
       </section>

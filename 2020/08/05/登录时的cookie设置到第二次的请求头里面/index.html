@@ -179,7 +179,7 @@
       <section class="content">
         <h3 id="前端跨域设置-withCredentials-true"><a href="#前端跨域设置-withCredentials-true" class="headerlink" title="前端跨域设置 withCredentials: true"></a>前端跨域设置 withCredentials: true</h3><p>在做登录认证的时候，会出现请求未登录的情况，查看请求头的时候发现并没有把登录时的cookie设置到第二次的请求头里面。</p>
 <p>查看资料才知道跨域请求要想带上cookie，必须要在ajax请求里加上↓↓↓↓</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">xhrFields: &#123;withCredentials: <span class="hljs-literal">true</span>&#125;, crossDomain: <span class="hljs-literal">true</span>。<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">xhrFields: &#123;<span class="hljs-attr">withCredentials</span>: <span class="hljs-literal">true</span>&#125;, <span class="hljs-attr">crossDomain</span>: <span class="hljs-literal">true</span>。<br></code></pre></td></tr></table></figure>
       </section>
       <section class="extra">
         
