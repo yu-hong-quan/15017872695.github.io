@@ -625,7 +625,7 @@ body ul {
   }
 }
 .lazyload {
-  background: url("/images/theme/loading.gif") no-repeat center;
+  background: url("") no-repeat center;
 }
 .loading {
   position: fixed;
@@ -659,7 +659,7 @@ body ul {
   z-index: 40;
   height: 90vh;
   width: 100%;
-  background-image: url("/images/theme/welcome-image.jpg");
+  background-image: url("");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-attachment: fixed;
